@@ -14,6 +14,7 @@
             max-width: 100%;
         }
         
+        
         body {
             font-family: 'Inter',Arial, sans-serif;
             margin: 0;
@@ -29,6 +30,52 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
+}
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+#navbar {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    #navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: dodgerblue;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        text-align: center;
+    }
+
+    #navbar a {
+        padding: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    #navbar.show {
+        display: flex;
+    }
+
+    .logo-title {
+        text-align: center;
+    }
+
+    header {
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 header h1 {
@@ -204,10 +251,16 @@ nav a {
 <body>
 
 <header>
-    <h1>Mohamed Najah</h1>
-    <p>Artist | Designer</p>
-    <nav>
+    <div class="logo-title">
+        <h1>Mohamed Najah</h1>
+        <p>Artist | Designer</p>
+    </div>
 
+    <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <nav id="navbar">
         <a href="#artworks">Artworks</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -258,6 +311,12 @@ nav a {
 <footer>
     <p>&copy; 2025 Mohamed Najah</p>
 </footer>
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('navbar');
+        nav.classList.toggle('show');
+    }
+</script>
 
 </body>
 </html>
