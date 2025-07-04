@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #eee;
+}
+header {
+  background: #1e90ff;
+  color: #000;
+  padding-top: 0;
+  text-align: center;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Full-width single banner image */
+.banner-single {
+  width: 100%;
+  height: 220px;
+  background: url('images/banner.jpg') center center / cover no-repeat;
+  position: relative;
+  box-shadow: inset 0 -40px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Optional text inside banner */
+.banner-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 2rem;
+  text-shadow: 0 0 10px #000;
+}
+
+/* Floating circular DP */
+.profile-pic-wrapper {
+  position: relative;
+  margin-top: -90px; /* Adjust for overlap */
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #000;
+  box-shadow: 0 0 25px 5px #1e90ffaa;
+  background: #111;
+  transition: box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+  box-shadow: 0 0 35px 8px #63b8ffcc;
+}
+
+header h1 {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 2.5rem;
+  text-shadow: 0 0 5px #000;
+}
+
+header p {
+  margin-top: 0.3rem;
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: #111;
+  text-shadow: 0 0 5px #000;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .banner-single {
+    height: 150px;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-pic-wrapper {
+    margin-top: -50px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+header {
+  background: #1e90ff;
+  color: #000;
+  padding-top: 0;
+  text-align: center;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.banner {
+  width: 100%;
+  height: 200px;
+  background: url('your-banner-image.jpg') center/cover no-repeat;
+  position: relative;
+  box-shadow: inset 0 -40px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Circle DP floating over banner */
+.profile-pic-wrapper {
+  position: relative;
+  margin-top: -90px; /* adjusts how much it overlaps */
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #000;
+  box-shadow: 0 0 25px 5px #1e90ffaa;
+  background: #111;
+  transition: box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+  box-shadow: 0 0 35px 8px #63b8ffcc;
+}
+
+/* Rest of the header styling remains the same */
+header h1 {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 2.5rem;
+  text-shadow: 0 0 5px #000;
+}
+
+header p {
+  margin-top: 0.3rem;
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: #111;
+  text-shadow: 0 0 5px #000;
+}
+
+/* Responsive for small devices */
+@media (max-width: 600px) {
+  .banner {
+    height: 150px;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-pic-wrapper {
+    margin-top: -50px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+header {
+  background: #1e90ff;
+  color: #000;
+  padding: 2rem 1rem;
+  text-align: center;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #000;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 0 25px 5px #1e90ffaa;
+  transition: box-shadow 0.3s ease;
+}
+
+header img:hover {
+  box-shadow: 0 0 35px 8px #63b8ffcc;
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 2.5rem;
+  text-shadow: 0 0 5px #000;
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: #111;
+  text-shadow: 0 0 5px #000;
+}
+
+.portfolio {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Card shared styles */
+.card, .behance-embed-card {
+  background: #111;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px #1e90ff88;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #eee;
+}
+
+.card:hover, .behance-embed-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px #1e90ffcc;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: brightness(1.1);
+}
+
+.behance-embed-card iframe {
+  width: 100%;
+  height: 280px;
+  border: none;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.behance-embed-card:hover iframe {
+  filter: brightness(1.1);
+}
+
+.card-body {
+  padding: 1rem 1.5rem;
+}
+
+.card-body h3 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  color: #1e90ff;
+}
+
+.card-body p {
+  margin: 0;
+  color: #ccc;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+footer {
+  background: #111;
+  color: #eee;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  box-shadow: inset 0 10px 30px #1e90ff66;
+}
+
+.socials {
+  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+}
+
+.socials a {
+  color: #1e90ff;
+  font-size: 1.8rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials a:hover {
+  color: #63b8ff;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  header img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.iframe-loader {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Bouncing Balls Animation */
+.bounce-loader {
+  gap: 8px;
+}
+
+.bounce-loader .ball {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1e90ff;
+  animation: bounce 0.6s infinite ease-in-out;
+}
+
+.bounce-loader .ball:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.bounce-loader .ball:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Hide iframe until loaded */
+.behance-embed-card iframe {
+  display: none;
+}
+
+/* Show iframe and hide loader after load */
+.behance-embed-card.loaded iframe {
+  display: block;
+}
+
+.behance-embed-card.loaded .iframe-loader {
+  display: none;
+}
