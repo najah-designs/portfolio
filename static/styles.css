@@ -24,7 +24,7 @@ header {
 .banner-single {
   width: 100%;
   height: 220px;
-  background: url('images/banner.jpg') center center / cover no-repeat;
+  background: url('/assets/banner.png') center center / cover no-repeat;
   position: relative;
   box-shadow: inset 0 -40px 60px rgba(0, 0, 0, 0.4);
 }
