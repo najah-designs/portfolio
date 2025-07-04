@@ -20,15 +20,29 @@
   <section class="portfolio">
     <!-- Repeatable Project Cards -->
     <div class="card behance-embed-card">
-      <iframe scrolling="no" seamless src="https://www.behance.net/embed/project/228942731?ilo0=1" frameborder="0" allowfullscreen loading="lazy" allow="clipboard-write" referrerpolicy="strict-origin-when-cross-origin" title="Behance Project Embed"></iframe>
-      <div class="card-body">
-        <h3>Poster Design</h3>
-        <p>Using Photoshop only.</p>
-      </div>
-    </div>
+  <div class="iframe-loader bounce-loader">
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+  </div>
+  <iframe 
+    scrolling="no" 
+    seamless 
+    src="https://www.behance.net/embed/project/228942731?ilo0=1" 
+    frameborder="0" 
+    allowfullscreen 
+    loading="lazy" 
+    allow="clipboard-write" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    title="Behance Project Embed"
+    onload="hideLoader(this)">
+  </iframe>
+  <div class="card-body">
+    <h3>Poster Design</h3>
+    <p>Using Photoshop only.</p>
+  </div>
+</div>
 
-    <!-- More iframe projects (copy same structure) -->
-    <!-- ... -->
   </section>
 
   <footer>
