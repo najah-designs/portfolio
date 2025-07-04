@@ -1,359 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-<meta name="description" content="Portfolio of Mohamed Najah - Graphic Designer & Visual Artist specializing in UI/UX designing, branding, illustration, and visual design." />
-
-
-<title>Mohamed Najah</title>
-<link rel="shortcut icon" href="/dp-circle.png" type="image/x-icon">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-
-  * {
-    box-sizing: border-box;
-  }
-  .iframe-wrapper {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 15px 15px 0 0;
-  position: relative;
-}
-
-.behance-embed-card iframe {
-  width: 100%;
-  height: 280px; /* or whatever height fits well */
-  border: none;
-  display: block;
-  transition: filter 0.3s ease;
-}
-
-
-.behance-embed-card:hover iframe {
-  filter: brightness(1.1);
-}
-
-/* Behance embed card styles to match .card and iframe sizing */
-.behance-embed-card {
-  /* Keep the same card styling */
-  background: #111;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px #1e90ff88;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #eee;
-  display: flex;
-  flex-direction: column;
-}
-
-.behance-embed-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px #1e90ffcc;
-}
-
-/* Make iframe fill the card width and have a fixed height */
-.behance-embed-card iframe {
-  width: 100%;
-  height: 280px; /* taller to avoid scrollbar */
-  border: none;
-  display: block;
-  transition: filter 0.3s ease;
-}
-
-.behance-embed-card:hover iframe {
-  filter: brightness(1.1);
-}
-
-/* Card body same as other cards */
-.behance-embed-card .card-body {
-  padding: 1rem 1.5rem;
-}
-
-.behance-embed-card .card-body h3 {
-  margin: 0 0 0.5rem 0;
-  font-weight: 600;
-  color: #1e90ff;
-}
-
-.behance-embed-card .card-body p {
-  margin: 0;
-  color: #ccc;
-  font-weight: 300;
-  font-size: 0.9rem;
-}
-
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #000;
-    color: #eee;
-  }
-
-  header {
-    background: #1e90ff; /* DodgerBlue */
-    color: #000;
-    padding: 2rem 1rem;
-    text-align: center;
-    letter-spacing: 2px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header img {
-  width: 180px;          /* increased size */
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 5px solid #000; /* slightly thicker border */
-  margin-bottom: 1.2rem;
-  box-shadow: 0 0 25px 5px #1e90ffaa; /* bigger and softer glow */
-  transition: box-shadow 0.3s ease;
-}
-
-header img:hover {
-  box-shadow: 0 0 35px 8px #63b8ffcc; /* subtle glow on hover */
-}
-
-
-  header h1 {
-    margin: 0;
-    font-weight: 600;
-    font-size: 2.5rem;
-    text-shadow: 0 0 5px #000;
-  }
-
-  header p {
-    margin-top: 0.5rem;
-    font-weight: 300;
-    font-size: 1.1rem;
-    color: #111;
-    text-shadow: 0 0 5px #000;
-  }
-
-  .portfolio {
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-
-  .card {
-    background: #111;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px #1e90ff88;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #eee;
-  }
-
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px #1e90ffcc;
-  }
-
-  .card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    filter: brightness(1.1);
-  }
-
-  .card-body {
-    padding: 1rem 1.5rem;
-  }
-
-  .card-body h3 {
-    margin: 0 0 0.5rem 0;
-    font-weight: 600;
-    color: #1e90ff;
-  }
-
-  .card-body p {
-    margin: 0;
-    color: #ccc;
-    font-weight: 300;
-    font-size: 0.9rem;
-  }
-
-  footer {
-    background: #111;
-    color: #eee;
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 3rem;
-    box-shadow: inset 0 10px 30px #1e90ff66;
-  }
-
-  .socials {
-    margin: 1rem 0 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 1.8rem;
-  }
-
- .socials a {
-  color: #1e90ff;
-  font-size: 1.8rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.socials a:hover {
-  color: #63b8ff;
-}
-
-
-  .socials a svg {
-    vertical-align: middle;
-    fill: currentColor;
-  }
-
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 1.8rem;
-    }
-    header img {
-      width: 100px;
-      height: 100px;
-    }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Mohamed Najah - Graphic Designer & Visual Artist specializing in UI/UX designing, branding, illustration, and visual design." />
+  <title>Mohamed Najah</title>
+  <link rel="shortcut icon" href="/dp-circle.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header>
-  <img src="/dp.webp" alt="Your Name" />
-  <h1>Mohamed Najah</h1>
-  <p>Graphic Designer | UI/UX Designer | Visual Artist</p>
-</header>
+  <header>
+    <img src="/dp.webp" alt="Your Name" />
+    <h1>Mohamed Najah</h1>
+    <p>Graphic Designer | UI/UX Designer | Visual Artist</p>
+  </header>
 
-<section class="portfolio">
-  
-  <div class="card behance-embed-card">
-  <iframe scrolling="no" seamless="seamless"
-    src="https://www.behance.net/embed/project/228942731?ilo0=1"
-    frameborder="0"
-    allowfullscreen
-    loading="lazy"
-    allow="clipboard-write"
-    referrerpolicy="strict-origin-when-cross-origin"
-    title="Behance Project Embed"
-  ></iframe>
-  <div class="card-body">
-    <h3>Poster Design</h3>
-    <p>Using Photoshop only.</p>
-  </div>
-</div>
-<div class="card behance-embed-card">
-  <iframe scrolling="no" seamless="seamless"
-    src="https://www.behance.net/embed/project/228942505?ilo0=1"
-    frameborder="0"
-    allowfullscreen
-    loading="lazy"
-    allow="clipboard-write"
-    referrerpolicy="strict-origin-when-cross-origin"
-    title="Behance Project Embed"
-  ></iframe>
-  <div class="card-body">
-    <h3>Poster Design</h3>
-    <p>Using Photoshop only.</p>
-  </div>
-</div>
-<div class="card behance-embed-card">
-  <iframe scrolling="no" seamless="seamless"
-    src="https://www.behance.net/embed/project/228942375?ilo0=1"
-    frameborder="0"
-    allowfullscreen
-    loading="lazy"
-    allow="clipboard-write"
-    referrerpolicy="strict-origin-when-cross-origin"
-    title="Behance Project Embed"
-  ></iframe>
-  <div class="card-body">
-    <h3>Poster Design</h3>
-    <p>Using Photoshop only.</p>
-  </div>
-</div>
-<div class="card behance-embed-card">
-  <iframe scrolling="no" seamless="seamless"
-    src="https://www.behance.net/embed/project/224020919?ilo0=1"
-    frameborder="0"
-    allowfullscreen
-    loading="lazy"
-    allow="clipboard-write"
-    referrerpolicy="strict-origin-when-cross-origin"
-    title="Behance Project Embed"
-  ></iframe>
-  <div class="card-body">
-    <h3>Poster Design</h3>
-    <p>Using Photoshop only.</p>
-  </div>
-</div>
-<div class="card behance-embed-card">
-  <iframe scrolling="no" seamless="seamless"
-    src="https://www.behance.net/embed/project/223964697?ilo0=1"
-    frameborder="0"
-    allowfullscreen
-    loading="lazy"
-    allow="clipboard-write"
-    referrerpolicy="strict-origin-when-cross-origin"
-    title="Behance Project Embed"
-  ></iframe>
-  <div class="card-body">
-    <h3>Poster Design</h3>
-    <p>Using Photoshop only.</p>
-  </div>
-</div>
-<div class="card behance-embed-card">
-  <iframe scrolling="no" seamless="seamless"
-    src="https://www.behance.net/embed/project/223955593?ilo0=1"
-    frameborder="0"
-    allowfullscreen
-    loading="lazy"
-    allow="clipboard-write"
-    referrerpolicy="strict-origin-when-cross-origin"
-    title="Behance Project Embed"
-  ></iframe>
-  <div class="card-body">
-    <h3>Illustration Design</h3>
-    <p>Using Adobe Illustrator.</p>
-  </div>
-</div>
-</section>
+  <section class="portfolio">
+    <!-- Repeatable Project Cards -->
+    <div class="card behance-embed-card">
+      <iframe scrolling="no" seamless src="https://www.behance.net/embed/project/228942731?ilo0=1" frameborder="0" allowfullscreen loading="lazy" allow="clipboard-write" referrerpolicy="strict-origin-when-cross-origin" title="Behance Project Embed"></iframe>
+      <div class="card-body">
+        <h3>Poster Design</h3>
+        <p>Using Photoshop only.</p>
+      </div>
+    </div>
 
+    <!-- More iframe projects (copy same structure) -->
+    <!-- ... -->
+  </section>
 
-<footer>
-  <p>Contact Me</p>
-  <div class="socials">
-    <a href="https://www.behance.net/mohamednajahp" target="_blank" aria-label="Behance" title="Behance">
-      <i class="fab fa-behance" style="color:#1e90ff; font-size: 24px;"></i>
-    </a>
+  <footer>
+    <p>Contact Me</p>
+    <div class="socials">
+      <a href="https://www.behance.net/mohamednajahp" target="_blank" aria-label="Behance" title="Behance">
+        <i class="fab fa-behance"></i>
+      </a>
+      <a href="https://dribbble.com/mohamednajahp" target="_blank" aria-label="Dribbble" title="Dribbble">
+        <i class="fab fa-dribbble"></i>
+      </a>
+      <a href="https://www.ig.com/yourhandle" target="_blank" aria-label="IG" title="IG">
+        <i class="fas fa-camera"></i>
+      </a>
+      <a href="mailto:mohmednajah12@gmail.com" aria-label="Email" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <p>© 2025 Mohamed Najah. All rights reserved.</p>
+  </footer>
 
-    <a href="https://dribbble.com/mohamednajahp" target="_blank" aria-label="Dribbble" title="Dribbble">
-      <i class="fab fa-dribbble" style="color:#1e90ff; font-size: 24px;"></i>
-    </a>
-
-    <a href="https://www.ig.com/yourhandle" target="_blank" aria-label="IG" title="IG">
-      <i class="fas fa-camera" style="color:#1e90ff; font-size: 24px;"></i>
-    </a>
-
-    <a href="mailto:mohmednajah12@gmail.com" aria-label="Email" title="Email">
-      <i class="fas fa-envelope" style="color:#1e90ff; font-size: 24px;"></i>
-    </a>
-  </div>
-  <p>© 2025 Mohamed Najah. All rights reserved.</p>
-</footer>
+  <script src="script.js"></script>
 </body>
 </html>
