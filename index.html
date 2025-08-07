@@ -3,193 +3,927 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Mohamed Najah - Graphic Designer & Visual Artist specializing in UI/UX designing, branding, illustration, and visual design." />
-  <title>Mohamed Najah</title>
-  <link rel="shortcut icon" href="assets/dp-circle.png" type="image/x-icon">
+  <meta name="description" content="Portfolio of Creative Minds Collective - A team of talented graphic designers specializing in branding, UI/UX, illustration, and print design." />
+  <title>NajahCreates</title>
+  <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="static/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #ec4899;
+      --dark: #0f172a;
+      --darker: #020617;
+      --light: #1e293b;
+      --lighter: #334155;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --gray: #94a3b8;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--darker);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
+    header {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+      color: white;
+      overflow: hidden;
+    }
+
+    .header-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .logo i {
+      font-size: 60px;
+      color: white;
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 900;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      font-weight: 300;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: var(--gray);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Team Section */
+    .team-section {
+      padding: 100px 0;
+      background-color: var(--dark);
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto 60px;
+      font-size: 1.1rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .team-card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .team-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .team-info {
+      padding: 25px;
+    }
+
+    .team-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--text);
+    }
+
+    .team-role {
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .team-bio {
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .team-socials {
+      display: flex;
+      gap: 15px;
+    }
+
+    .team-socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--light);
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .team-socials a:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* Services Section */
+    .services-section {
+      padding: 100px 0;
+      background-color: var(--darker);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .service-icon i {
+      font-size: 36px;
+      color: white;
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--text);
+    }
+
+    .service-desc {
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Portfolio Section */
+    .portfolio-section {
+      padding: 100px 0;
+      background-color: var(--dark);
+    }
+
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 50px;
+    }
+
+    .filter-btn {
+      padding: 10px 25px;
+      background-color: var(--card-bg);
+      border: none;
+      border-radius: 50px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--text);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .portfolio-card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .behance-embed {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      background-color: var(--light);
+    }
+
+    .behance-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .iframe-loader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--light);
+      z-index: 10;
+    }
+
+    .bounce-loader {
+      display: flex;
+      gap: 10px;
+    }
+
+    .ball {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+
+    .ball:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    .ball:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+
+    @keyframes bounce {
+      0%, 80%, 100% {
+        transform: scale(0);
+      }
+      40% {
+        transform: scale(1);
+      }
+    }
+
+    .portfolio-info {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .portfolio-desc {
+      color: var(--gray);
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .portfolio-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    .portfolio-category {
+      display: inline-block;
+      padding: 5px 15px;
+      background-color: var(--light);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .portfolio-link {
+      color: var(--primary);
+      font-weight: 500;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition);
+    }
+
+    .portfolio-link:hover {
+      gap: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--darker);
+      color: var(--text);
+      padding: 80px 0 40px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-column h3 {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 10px;
+      color: var(--text);
+    }
+
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    }
+
+    .footer-column p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      padding-left: 5px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .footer-socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--card-bg);
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .footer-socials a:hover {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--light);
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .section-title {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-
+  <!-- Header -->
   <header>
-  <div class="banner-single">
-    
-  </div>
-  <div class="profile-pic-wrapper">
-    <img src="/assets/dp.webp" alt="Mohamed Najah" class="profile-pic" />
-  </div>
-  <h1>Mohamed Najah</h1>
-  <p>Graphic Designer | UI/UX Designer | Visual Artist</p>
-</header>
-
-
-  <section class="portfolio">
-    <!-- Repeatable Project Cards -->
-    
-    <div class="card behance-embed-card">
-      <div class="iframe-loader bounce-loader">
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
+    <div class="header-bg"></div>
+    <div class="header-content container">
+      <div class="logo">
+        <i class="fas fa-palette"></i>
       </div>
-      <iframe 
-        scrolling="no" 
-        seamless 
-        src="https://www.behance.net/embed/project/228942731?ilo0=1" 
-        frameborder="0" 
-        allowfullscreen 
-        loading="lazy" 
-        allow="clipboard-write" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        title="Behance Project Embed"
-        onload="hideLoader(this)">
-      </iframe>
-      <div class="card-body">
-        <h3>Poster Design</h3>
-        <p>Spikestorm Volleyball league.</p>
-      </div>
+      <h1>Creative Minds Collective</h1>
+      <p class="tagline">Where imagination meets innovation to create extraordinary visual experiences</p>
+      <a href="#team" class="cta-button">Meet Our Team</a>
     </div>
+  </header>
 
-    <div class="card behance-embed-card">
-      <div class="iframe-loader bounce-loader">
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-      </div>
-      <iframe 
-        scrolling="no" 
-        seamless 
-        src="https://www.behance.net/embed/project/228942505?ilo0=1" 
-        frameborder="0" 
-        allowfullscreen 
-        loading="lazy" 
-        allow="clipboard-write" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        title="Behance Project Embed"
-        onload="hideLoader(this)">
-      </iframe>
-      <div class="card-body">
-        <h3>Poster Design</h3>
-        <p>For Quizzy Hunt quiz series.</p>
-      </div>
-    </div>
-
-    <div class="card behance-embed-card">
-      <div class="iframe-loader bounce-loader">
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-      </div>
-      <iframe 
-        scrolling="no" 
-        seamless 
-        src="https://www.behance.net/embed/project/229616481?ilo0=1" 
-        frameborder="0" 
-        allowfullscreen 
-        loading="lazy" 
-        allow="clipboard-write" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        title="Behance Project Embed"
-        onload="hideLoader(this)">
-      </iframe>
-      <div class="card-body">
-        <h3>Poster Design</h3>
-        <p>For Sa Literature Festival.</p>
-      </div>
-    </div>
-
-    <div class="card behance-embed-card">
-      <div class="iframe-loader bounce-loader">
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-      </div>
-      <iframe 
-        scrolling="no" 
-        seamless 
-        src="https://www.behance.net/embed/project/228942375?ilo0=1" 
-        frameborder="0" 
-        allowfullscreen 
-        loading="lazy" 
-        allow="clipboard-write" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        title="Behance Project Embed"
-        onload="hideLoader(this)">
-      </iframe>
-      <div class="card-body">
-        <h3>Poster Design</h3>
-        <p>For Pointless Group Quiz.</p>
-      </div>
-    </div>
-
-    <div class="card behance-embed-card">
-      <div class="iframe-loader bounce-loader">
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-      </div>
-      <iframe 
-        scrolling="no" 
-        seamless 
-        src="https://www.behance.net/embed/project/223964697?ilo0=1" 
-        frameborder="0" 
-        allowfullscreen 
-        loading="lazy" 
-        allow="clipboard-write" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        title="Behance Project Embed"
-        onload="hideLoader(this)">
-      </iframe>
-      <div class="card-body">
-        <h3>Poster Design</h3>
-        <p>Using Photoshop only.</p>
-      </div>
-    </div>
-
-    <div class="card behance-embed-card">
-      <div class="iframe-loader bounce-loader">
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-      </div>
-      <iframe 
-        scrolling="no" 
-        seamless 
-        src="https://www.behance.net/embed/project/223955593?ilo0=1" 
-        frameborder="0" 
-        allowfullscreen 
-        loading="lazy" 
-        allow="clipboard-write" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        title="Behance Project Embed"
-        onload="hideLoader(this)">
-      </iframe>
-      <div class="card-body">
-        <h3>Illustration of my Profile Picture</h3>
-        <p>Using Adobe Illustrator.</p>
+  <!-- Team Section -->
+  <section id="team" class="team-section">
+    <div class="container">
+      <h2 class="section-title">Our Creative Team</h2>
+      <p class="section-subtitle">Meet the talented designers who bring ideas to life through visual storytelling</p>
+      
+      <div class="team-grid" id="team-container">
+        <!-- Team members will be dynamically inserted here -->
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>Contact Me</p>
-    <div class="socials">
-      <a href="https://www.behance.net/mohamednajahp" target="_blank" aria-label="Behance" title="Behance">
-        <i class="fab fa-behance"></i>
-      </a>
-      <a href="https://dribbble.com/mohamednajahp" target="_blank" aria-label="Dribbble" title="Dribbble">
-        <i class="fab fa-dribbble"></i>
-      </a>
-      <a href="https://www.ig.com/yourhandle" target="_blank" aria-label="IG" title="IG">
-        <i class="fas fa-camera"></i>
-      </a>
-      <a href="mailto:mohmednajah12@gmail.com" aria-label="Email" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">We offer a comprehensive range of design services to meet all your creative needs</p>
+      
+      <div class="services-grid" id="services-container">
+        <!-- Services will be dynamically inserted here -->
+      </div>
     </div>
-    <p>© 2025 Mohamed Najah. All rights reserved.</p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio-section">
+    <div class="container">
+      <h2 class="section-title">Our Portfolio</h2>
+      <p class="section-subtitle">Explore our latest projects showcasing creativity, innovation, and design excellence</p>
+      
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+        <button class="filter-btn" data-filter="ui-ux">UI/UX</button>
+        <button class="filter-btn" data-filter="illustration">Illustration</button>
+        <button class="filter-btn" data-filter="print">Print Design</button>
+      </div>
+      
+      <div class="portfolio-grid" id="portfolio-container">
+        <!-- Portfolio items will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <p>Creative Minds Collective is a team of passionate designers dedicated to creating visually stunning and effective design solutions for our clients.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#">Process</a></li>
+            <li><a href="#">Testimonials</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="#services">Brand Identity</a></li>
+            <li><a href="#services">UI/UX Design</a></li>
+            <li><a href="#services">Illustration</a></li>
+            <li><a href="#services">Print Design</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p>Have a project in mind? Let's collaborate!</p>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope"></i> hello@creativeminds.com</li>
+            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+            <li><i class="fas fa-map-marker-alt"></i> 123 Design Street, Creative City</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2023 Creative Minds Collective. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
-  <script src="static/script.js"></script>
+  <script>
+    // Team members data
+    const teamMembers = [
+      {
+        name: "Alex Morgan",
+        role: "Creative Director",
+        bio: "With over 10 years of experience, Alex leads our creative vision and ensures every project meets our high standards.",
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+        social: {
+          behance: "#",
+          dribbble: "#",
+          linkedin: "#"
+        }
+      },
+      {
+        name: "Taylor Kim",
+        role: "UI/UX Designer",
+        bio: "Taylor specializes in creating intuitive and engaging user experiences that delight users and drive business results.",
+        image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        social: {
+          behance: "#",
+          dribbble: "#",
+          linkedin: "#"
+        }
+      },
+      {
+        name: "Jordan Lee",
+        role: "Brand Designer",
+        bio: "Jordan crafts compelling brand identities that tell stories and create emotional connections with audiences.",
+        image: "https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+        social: {
+          behance: "#",
+          dribbble: "#",
+          linkedin: "#"
+        }
+      },
+      {
+        name: "Casey Smith",
+        role: "Illustrator",
+        bio: "Casey brings ideas to life through stunning illustrations that capture imagination and communicate complex concepts visually.",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        social: {
+          behance: "#",
+          dribbble: "#",
+          linkedin: "#"
+        }
+      }
+    ];
+
+    // Services data
+    const services = [
+      {
+        title: "Brand Identity",
+        description: "We create memorable brand identities that resonate with your target audience and set you apart from the competition.",
+        icon: "fa-id-card"
+      },
+      {
+        title: "UI/UX Design",
+        description: "Our user-centered design approach ensures intuitive interfaces and engaging experiences across all digital platforms.",
+        icon: "fa-mobile-alt"
+      },
+      {
+        title: "Illustration",
+        description: "Custom illustrations that bring your ideas to life and add a unique visual element to your brand communications.",
+        icon: "fa-paint-brush"
+      },
+      {
+        title: "Print Design",
+        description: "From brochures to packaging, we design print materials that make a lasting impression in the physical world.",
+        icon: "fa-print"
+      }
+    ];
+
+    // Portfolio projects data
+    const portfolioProjects = [
+      {
+        title: "Brand Identity for Tech Startup",
+        description: "Complete brand identity design including logo, color palette, and brand guidelines for an emerging AI company.",
+        category: "branding",
+        behanceUrl: "https://www.behance.net/embed/project/228942731?ilo0=1"
+      },
+      {
+        title: "Mobile Banking App UI",
+        description: "User interface design for a modern mobile banking application focusing on simplicity and security.",
+        category: "ui-ux",
+        behanceUrl: "https://www.behance.net/embed/project/228942505?ilo0=1"
+      },
+      {
+        title: "Festival Poster Series",
+        description: "Vibrant poster designs for a summer music festival capturing the energy and spirit of the event.",
+        category: "print",
+        behanceUrl: "https://www.behance.net/embed/project/229616481?ilo0=1"
+      },
+      {
+        title: "Character Illustrations",
+        description: "Set of whimsical character illustrations created for a children's educational app.",
+        category: "illustration",
+        behanceUrl: "https://www.behance.net/embed/project/228942375?ilo0=1"
+      },
+      {
+        title: "E-commerce Website Redesign",
+        description: "Complete UI/UX redesign of an e-commerce platform resulting in 35% increase in conversions.",
+        category: "ui-ux",
+        behanceUrl: "https://www.behance.net/embed/project/223964697?ilo0=1"
+      },
+      {
+        title: "Packaging Design for Organic Products",
+        description: "Eco-friendly packaging design for a line of organic food products emphasizing natural ingredients.",
+        category: "branding",
+        behanceUrl: "https://www.behance.net/embed/project/223955593?ilo0=1"
+      }
+    ];
+
+    // Function to create team member cards
+    function createTeamMemberCard(member) {
+      return `
+        <div class="team-card">
+          <img src="${member.image}" alt="${member.name}" class="team-image">
+          <div class="team-info">
+            <h3 class="team-name">${member.name}</h3>
+            <p class="team-role">${member.role}</p>
+            <p class="team-bio">${member.bio}</p>
+            <div class="team-socials">
+              <a href="${member.social.behance}" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
+              <a href="${member.social.dribbble}" target="_blank" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+              <a href="${member.social.linkedin}" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Function to create service cards
+    function createServiceCard(service) {
+      return `
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas ${service.icon}"></i>
+          </div>
+          <h3 class="service-title">${service.title}</h3>
+          <p class="service-desc">${service.description}</p>
+        </div>
+      `;
+    }
+
+    // Function to create portfolio project cards
+    function createPortfolioCard(project) {
+      return `
+        <div class="portfolio-card" data-category="${project.category}">
+          <div class="behance-embed">
+            <div class="iframe-loader bounce-loader">
+              <div class="ball"></div>
+              <div class="ball"></div>
+              <div class="ball"></div>
+            </div>
+            <iframe 
+              scrolling="no" 
+              seamless 
+              src="${project.behanceUrl}" 
+              frameborder="0" 
+              allowfullscreen 
+              loading="lazy" 
+              allow="clipboard-write" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              title="Behance Project Embed"
+              onload="hideLoader(this)">
+            </iframe>
+          </div>
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">${project.title}</h3>
+            <p class="portfolio-desc">${project.description}</p>
+            <div class="portfolio-meta">
+              <span class="portfolio-category">${project.category}</span>
+              <a href="${project.behanceUrl}" target="_blank" class="portfolio-link">View on Behance <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Function to hide iframe loader
+    function hideLoader(iframe) {
+      const loader = iframe.previousElementSibling;
+      if (loader && loader.classList.contains('iframe-loader')) {
+        loader.style.display = 'none';
+      }
+    }
+
+    // Initialize team members
+    function initTeamMembers() {
+      const teamContainer = document.getElementById('team-container');
+      teamContainer.innerHTML = teamMembers.map(member => createTeamMemberCard(member)).join('');
+    }
+
+    // Initialize services
+    function initServices() {
+      const servicesContainer = document.getElementById('services-container');
+      servicesContainer.innerHTML = services.map(service => createServiceCard(service)).join('');
+    }
+
+    // Initialize portfolio projects
+    function initPortfolioProjects() {
+      const portfolioContainer = document.getElementById('portfolio-container');
+      portfolioContainer.innerHTML = portfolioProjects.map(project => createPortfolioCard(project)).join('');
+    }
+
+    // Filter functionality
+    function initFilterButtons() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          
+          // Filter projects
+          const filter = button.getAttribute('data-filter');
+          const projects = document.querySelectorAll('.portfolio-card');
+          
+          projects.forEach(project => {
+            if (filter === 'all' || project.getAttribute('data-category') === filter) {
+              project.style.display = 'block';
+            } else {
+              project.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+
+    // Smooth scrolling for anchor links
+    function initSmoothScrolling() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    }
+
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      initTeamMembers();
+      initServices();
+      initPortfolioProjects();
+      initFilterButtons();
+      initSmoothScrolling();
+    });
+  </script>
 </body>
 </html>
