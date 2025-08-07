@@ -4,7 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio of Creative Minds Collective - A team of talented graphic designers specializing in branding, UI/UX, illustration, and print design." />
-  <title>NajahCreates</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="Creative Minds Collective | NajahCreates" />
+  <meta property="og:description" content="Portfolio of Creative Minds Collective - A team of talented graphic designers specializing in branding, UI/UX, illustration, and print design." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://najahcreates.com" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Creative Minds Collective | NajahCreates" />
+  <meta name="twitter:description" content="Portfolio of Creative Minds Collective - A team of talented graphic designers specializing in branding, UI/UX, illustration, and print design." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
+  
+  <title>NajahCreates | Creative Minds Collective</title>
   <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,13 +38,11 @@
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Poppins', sans-serif;
       background-color: var(--darker);
@@ -39,14 +50,12 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-
     .container {
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
-
     /* Header Styles */
     header {
       position: relative;
@@ -61,7 +70,6 @@
       color: white;
       overflow: hidden;
     }
-
     .header-bg {
       position: absolute;
       top: 0;
@@ -74,12 +82,10 @@
       opacity: 0.15;
       z-index: 0;
     }
-
     .header-content {
       position: relative;
       z-index: 1;
     }
-
     .logo {
       width: 120px;
       height: 120px;
@@ -91,12 +97,10 @@
       margin: 0 auto 30px;
       box-shadow: var(--shadow);
     }
-
     .logo i {
       font-size: 60px;
       color: white;
     }
-
     h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: clamp(2.5rem, 8vw, 5rem);
@@ -109,7 +113,6 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
     .tagline {
       font-size: 1.5rem;
       font-weight: 300;
@@ -117,7 +120,6 @@
       margin: 0 auto 40px;
       color: var(--gray);
     }
-
     .cta-button {
       display: inline-block;
       padding: 15px 40px;
@@ -129,18 +131,15 @@
       transition: var(--transition);
       box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
     }
-
     .cta-button:hover {
       transform: translateY(-3px);
       box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
     }
-
     /* Team Section */
     .team-section {
       padding: 100px 0;
       background-color: var(--dark);
     }
-
     .section-title {
       font-family: 'Montserrat', sans-serif;
       font-size: 3rem;
@@ -149,7 +148,6 @@
       margin-bottom: 20px;
       color: var(--text);
     }
-
     .section-subtitle {
       text-align: center;
       color: var(--gray);
@@ -157,89 +155,61 @@
       margin: 0 auto 60px;
       font-size: 1.1rem;
     }
-
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 30px;
     }
-
     .team-card {
       background-color: var(--card-bg);
       border-radius: 16px;
       overflow: hidden;
       box-shadow: var(--shadow);
       transition: var(--transition);
+      display: flex;
+      flex-direction: column;
     }
-
     .team-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
-
     .team-image {
       width: 100%;
       height: 280px;
       object-fit: cover;
     }
-
     .team-info {
       padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
-
     .team-name {
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 5px;
       color: var(--text);
     }
-
     .team-role {
       color: var(--primary);
       font-weight: 500;
       margin-bottom: 15px;
     }
-
     .team-bio {
       color: var(--gray);
       font-size: 0.95rem;
       margin-bottom: 20px;
     }
-
-    .team-socials {
-      display: flex;
-      gap: 15px;
-    }
-
-    .team-socials a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: var(--light);
-      color: var(--primary);
-      transition: var(--transition);
-    }
-
-    .team-socials a:hover {
-      background-color: var(--primary);
-      color: white;
-    }
-
     /* Services Section */
     .services-section {
       padding: 100px 0;
       background-color: var(--darker);
     }
-
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 30px;
     }
-
     .service-card {
       background-color: var(--card-bg);
       border-radius: 16px;
@@ -252,12 +222,10 @@
       flex-direction: column;
       align-items: center;
     }
-
     .service-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
-
     .service-icon {
       width: 80px;
       height: 80px;
@@ -268,31 +236,26 @@
       align-items: center;
       margin-bottom: 25px;
     }
-
     .service-icon i {
       font-size: 36px;
       color: white;
     }
-
     .service-title {
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 15px;
       color: var(--text);
     }
-
     .service-desc {
       color: var(--gray);
       font-size: 1rem;
       line-height: 1.6;
     }
-
     /* Portfolio Section */
     .portfolio-section {
       padding: 100px 0;
       background-color: var(--dark);
     }
-
     .filter-buttons {
       display: flex;
       justify-content: center;
@@ -300,7 +263,6 @@
       gap: 15px;
       margin-bottom: 50px;
     }
-
     .filter-btn {
       padding: 10px 25px;
       background-color: var(--card-bg);
@@ -312,19 +274,16 @@
       color: var(--text);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
-
     .filter-btn.active,
     .filter-btn:hover {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: white;
     }
-
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 30px;
     }
-
     .portfolio-card {
       background-color: var(--card-bg);
       border-radius: 16px;
@@ -335,12 +294,10 @@
       display: flex;
       flex-direction: column;
     }
-
     .portfolio-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
-
     .behance-embed {
       position: relative;
       width: 100%;
@@ -348,13 +305,11 @@
       overflow: hidden;
       background-color: var(--light);
     }
-
     .behance-embed iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
-
     .iframe-loader {
       position: absolute;
       top: 0;
@@ -367,12 +322,10 @@
       background-color: var(--light);
       z-index: 10;
     }
-
     .bounce-loader {
       display: flex;
       gap: 10px;
     }
-
     .ball {
       width: 15px;
       height: 15px;
@@ -380,15 +333,12 @@
       background-color: var(--primary);
       animation: bounce 1.4s infinite ease-in-out both;
     }
-
     .ball:nth-child(1) {
       animation-delay: -0.32s;
     }
-
     .ball:nth-child(2) {
       animation-delay: -0.16s;
     }
-
     @keyframes bounce {
       0%, 80%, 100% {
         transform: scale(0);
@@ -397,34 +347,29 @@
         transform: scale(1);
       }
     }
-
     .portfolio-info {
       padding: 25px;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
     }
-
     .portfolio-title {
       font-size: 1.4rem;
       font-weight: 600;
       margin-bottom: 10px;
       color: var(--text);
     }
-
     .portfolio-desc {
       color: var(--gray);
       margin-bottom: 20px;
       flex-grow: 1;
     }
-
     .portfolio-meta {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-top: auto;
     }
-
     .portfolio-category {
       display: inline-block;
       padding: 5px 15px;
@@ -434,7 +379,6 @@
       font-weight: 500;
       color: var(--primary);
     }
-
     .portfolio-link {
       color: var(--primary);
       font-weight: 500;
@@ -444,25 +388,21 @@
       gap: 5px;
       transition: var(--transition);
     }
-
     .portfolio-link:hover {
       gap: 10px;
     }
-
     /* Footer */
     footer {
       background-color: var(--darker);
       color: var(--text);
       padding: 80px 0 40px;
     }
-
     .footer-content {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 40px;
       margin-bottom: 60px;
     }
-
     .footer-column h3 {
       font-size: 1.3rem;
       margin-bottom: 25px;
@@ -470,7 +410,6 @@
       padding-bottom: 10px;
       color: var(--text);
     }
-
     .footer-column h3::after {
       content: '';
       position: absolute;
@@ -480,37 +419,30 @@
       height: 3px;
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     }
-
     .footer-column p {
       color: var(--gray);
       margin-bottom: 20px;
     }
-
     .footer-links {
       list-style: none;
     }
-
     .footer-links li {
       margin-bottom: 15px;
     }
-
     .footer-links a {
       color: var(--gray);
       text-decoration: none;
       transition: var(--transition);
     }
-
     .footer-links a:hover {
       color: var(--primary);
       padding-left: 5px;
     }
-
     .footer-socials {
       display: flex;
       gap: 15px;
       margin-top: 20px;
     }
-
     .footer-socials a {
       display: flex;
       align-items: center;
@@ -522,13 +454,11 @@
       color: var(--primary);
       transition: var(--transition);
     }
-
     .footer-socials a:hover {
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
       transform: translateY(-5px);
     }
-
     .copyright {
       text-align: center;
       padding-top: 30px;
@@ -536,7 +466,36 @@
       color: var(--gray);
       font-size: 0.9rem;
     }
-
+    
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      z-index: 1000;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
+    }
+    
     /* Responsive */
     @media (max-width: 768px) {
       .portfolio-grid {
@@ -554,6 +513,77 @@
       .section-title {
         font-size: 2.2rem;
       }
+      
+      /* Sleek mobile adjustments */
+      .team-bio {
+        display: none;
+      }
+      
+      .team-info {
+        padding: 20px;
+      }
+      
+      .team-name {
+        font-size: 1.3rem;
+      }
+      
+      .team-role {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+      
+      .team-card {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+      
+      .behance-embed {
+        height: 250px;
+      }
+      
+      .portfolio-info {
+        padding: 20px;
+      }
+      
+      .portfolio-title {
+        font-size: 1.2rem;
+      }
+      
+      .portfolio-desc {
+        font-size: 0.9rem;
+      }
+      
+      .service-card {
+        padding: 30px 20px;
+      }
+      
+      .service-icon {
+        width: 70px;
+        height: 70px;
+      }
+      
+      .service-icon i {
+        font-size: 30px;
+      }
+      
+      .service-title {
+        font-size: 1.3rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+    
+    /* Browser compatibility prefixes */
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      .team-card:hover, .service-card:hover, .portfolio-card:hover {
+        -webkit-transform: translateY(-10px);
+        -moz-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
     }
   </style>
 </head>
@@ -565,12 +595,11 @@
       <div class="logo">
         <i class="fas fa-palette"></i>
       </div>
-      <h1>Creative Minds Collective</h1>
-      <p class="tagline">Where imagination meets innovation to create extraordinary visual experiences</p>
+      <h1>NajahCreates</h1>
+      <p class="tagline">Every <strong>Brand</strong> has a <strong>Story</strong> <br> We give it a <strong>Voice</strong>.</p>
       <a href="#team" class="cta-button">Meet Our Team</a>
     </div>
   </header>
-
   <!-- Team Section -->
   <section id="team" class="team-section">
     <div class="container">
@@ -582,7 +611,6 @@
       </div>
     </div>
   </section>
-
   <!-- Services Section -->
   <section id="services" class="services-section">
     <div class="container">
@@ -594,7 +622,6 @@
       </div>
     </div>
   </section>
-
   <!-- Portfolio Section -->
   <section class="portfolio-section">
     <div class="container">
@@ -614,14 +641,13 @@
       </div>
     </div>
   </section>
-
   <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
           <h3>About Us</h3>
-          <p>Creative Minds Collective is a team of passionate designers dedicated to creating visually stunning and effective design solutions for our clients.</p>
+          <p>NajahCreates is a team of passionate designers dedicated to creating visually stunning and effective design solutions for our clients.</p>
           <div class="footer-socials">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -668,7 +694,12 @@
       </div>
     </div>
   </footer>
-
+  
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+  
   <script>
     // Team members data
     const teamMembers = [
@@ -676,48 +707,27 @@
         name: "Alex Morgan",
         role: "Creative Director",
         bio: "With over 10 years of experience, Alex leads our creative vision and ensures every project meets our high standards.",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
-        social: {
-          behance: "#",
-          dribbble: "#",
-          linkedin: "#"
-        }
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
       },
       {
         name: "Taylor Kim",
         role: "UI/UX Designer",
         bio: "Taylor specializes in creating intuitive and engaging user experiences that delight users and drive business results.",
-        image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-        social: {
-          behance: "#",
-          dribbble: "#",
-          linkedin: "#"
-        }
+        image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
       },
       {
         name: "Jordan Lee",
         role: "Brand Designer",
         bio: "Jordan crafts compelling brand identities that tell stories and create emotional connections with audiences.",
-        image: "https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
-        social: {
-          behance: "#",
-          dribbble: "#",
-          linkedin: "#"
-        }
+        image: "https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
       },
       {
         name: "Casey Smith",
         role: "Illustrator",
         bio: "Casey brings ideas to life through stunning illustrations that capture imagination and communicate complex concepts visually.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-        social: {
-          behance: "#",
-          dribbble: "#",
-          linkedin: "#"
-        }
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
       }
     ];
-
     // Services data
     const services = [
       {
@@ -741,7 +751,6 @@
         icon: "fa-print"
       }
     ];
-
     // Portfolio projects data
     const portfolioProjects = [
       {
@@ -781,26 +790,19 @@
         behanceUrl: "https://www.behance.net/embed/project/223955593?ilo0=1"
       }
     ];
-
     // Function to create team member cards
     function createTeamMemberCard(member) {
       return `
         <div class="team-card">
-          <img src="${member.image}" alt="${member.name}" class="team-image">
+          <img src="${member.image}" alt="${member.name}" class="team-image" loading="lazy">
           <div class="team-info">
             <h3 class="team-name">${member.name}</h3>
             <p class="team-role">${member.role}</p>
             <p class="team-bio">${member.bio}</p>
-            <div class="team-socials">
-              <a href="${member.social.behance}" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
-              <a href="${member.social.dribbble}" target="_blank" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
-              <a href="${member.social.linkedin}" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
           </div>
         </div>
       `;
     }
-
     // Function to create service cards
     function createServiceCard(service) {
       return `
@@ -813,7 +815,6 @@
         </div>
       `;
     }
-
     // Function to create portfolio project cards
     function createPortfolioCard(project) {
       return `
@@ -834,7 +835,8 @@
               allow="clipboard-write" 
               referrerpolicy="strict-origin-when-cross-origin" 
               title="Behance Project Embed"
-              onload="hideLoader(this)">
+              onload="hideLoader(this)"
+              onerror="handleIframeError(this)">
             </iframe>
           </div>
           <div class="portfolio-info">
@@ -848,7 +850,6 @@
         </div>
       `;
     }
-
     // Function to hide iframe loader
     function hideLoader(iframe) {
       const loader = iframe.previousElementSibling;
@@ -856,25 +857,28 @@
         loader.style.display = 'none';
       }
     }
-
+    // Function to handle iframe error
+    function handleIframeError(iframe) {
+      const loader = iframe.previousElementSibling;
+      if (loader && loader.classList.contains('iframe-loader')) {
+        loader.innerHTML = '<p style="color: var(--gray);">Unable to load project. <a href="' + iframe.src + '" target="_blank" style="color: var(--primary);">View on Behance</a></p>';
+      }
+    }
     // Initialize team members
     function initTeamMembers() {
       const teamContainer = document.getElementById('team-container');
       teamContainer.innerHTML = teamMembers.map(member => createTeamMemberCard(member)).join('');
     }
-
     // Initialize services
     function initServices() {
       const servicesContainer = document.getElementById('services-container');
       servicesContainer.innerHTML = services.map(service => createServiceCard(service)).join('');
     }
-
     // Initialize portfolio projects
     function initPortfolioProjects() {
       const portfolioContainer = document.getElementById('portfolio-container');
       portfolioContainer.innerHTML = portfolioProjects.map(project => createPortfolioCard(project)).join('');
     }
-
     // Filter functionality
     function initFilterButtons() {
       const filterButtons = document.querySelectorAll('.filter-btn');
@@ -899,7 +903,6 @@
         });
       });
     }
-
     // Smooth scrolling for anchor links
     function initSmoothScrolling() {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -915,7 +918,27 @@
         });
       });
     }
-
+    // Back to top button functionality
+    function initBackToTop() {
+      const backToTopButton = document.getElementById('backToTop');
+      
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('visible');
+        } else {
+          backToTopButton.classList.remove('visible');
+        }
+      });
+      
+      // Scroll to top when button is clicked
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
     // Initialize everything when DOM is loaded
     document.addEventListener('DOMContentLoaded', () => {
       initTeamMembers();
@@ -923,6 +946,7 @@
       initPortfolioProjects();
       initFilterButtons();
       initSmoothScrolling();
+      initBackToTop();
     });
   </script>
 </body>
