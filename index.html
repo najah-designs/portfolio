@@ -19,23 +19,26 @@
   
   <title>NajahCreates | Creative Minds Collective</title>
   <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/Logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Syne:wght@400..800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #6366f1;
-      --primary-dark: #4f46e5;
-      --secondary: #ec4899;
-      --dark: #0f172a;
-      --darker: #020617;
-      --light: #1e293b;
-      --lighter: #334155;
-      --card-bg: #1e293b;
-      --text: #f8fafc;
-      --gray: #94a3b8;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      /* Updated color theme based on logo */
+      --primary: #39b6ff;      /* Pure blue from logo background */
+      --primary-dark: #25658a; /* Darker blue for hover states */
+      --secondary: #00ffff;    /* Light cyan from logo accent */
+      --dark: #0a192f;         /* Dark blue-tinted background */
+      --darker: #020c1b;       /* Even darker blue-tinted background */
+      --light: #1e3a5f;        /* Light blue-tinted card background */
+      --lighter: #2a4a7a;      /* Lighter blue-tinted elements */
+      --card-bg: #1e3a5f;      /* Card background matching light */
+      --text: #ffffff;         /* White text from logo elements */
+      --gray: #a8b2d1;         /* Lighter gray for secondary text */
+      --shadow: 0 10px 30px rgba(0, 102, 255, 0.2); /* Blue-tinted shadow */
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     * {
@@ -44,7 +47,7 @@
       box-sizing: border-box;
     }
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Syne', sans-serif;
       background-color: var(--darker);
       color: var(--text);
       line-height: 1.6;
@@ -96,10 +99,21 @@
       align-items: center;
       margin: 0 auto 30px;
       box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
     }
-    .logo i {
-      font-size: 60px;
-      color: white;
+    .logo::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 70% 30%, var(--secondary), transparent 70%);
+      opacity: 0.3;
+    }
+    .logo img{
+      width: 100%;
     }
     h1 {
       font-family: 'Montserrat', sans-serif;
@@ -107,7 +121,6 @@
       font-weight: 900;
       margin-bottom: 20px;
       letter-spacing: -1px;
-      text-transform: uppercase;
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -129,12 +142,128 @@
       font-weight: 600;
       text-decoration: none;
       transition: var(--transition);
-      box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+      box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+    .cta-button:hover::before {
+      left: 100%;
     }
     .cta-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
+      box-shadow: 0 15px 30px rgba(0, 102, 255, 0.4);
     }
+    
+    /* About Us Section */
+    .about-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-color: var(--dark);
+      overflow: hidden;
+    }
+    .about-container {
+      display: flex;
+      width: 300%;
+      transition: transform 0.5s ease-out;
+    }
+    .about-slide {
+      width: 33.333%;
+      padding: 0 40px;
+    }
+    .about-slide h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: var(--text);
+      position: relative;
+      display: inline-block;
+    }
+    .about-slide h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    }
+    .about-slide p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    .about-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin: 30px 0;
+      box-shadow: var(--shadow);
+    }
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .about-feature {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 255, 255, 0.1);
+      transition: var(--transition);
+    }
+    .about-feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 102, 255, 0.3);
+      border-color: rgba(0, 255, 255, 0.3);
+    }
+    .about-feature h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--secondary);
+    }
+    .about-feature p {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+    .about-nav {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+      z-index: 10;
+    }
+    .about-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .about-dot.active {
+      background-color: var(--secondary);
+      transform: scale(1.3);
+    }
+    
     /* Team Section */
     .team-section {
       padding: 100px 0;
@@ -168,10 +297,12 @@
       transition: var(--transition);
       display: flex;
       flex-direction: column;
+      border: 1px solid rgba(0, 255, 255, 0.1);
     }
     .team-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 102, 255, 0.3);
+      border-color: rgba(0, 255, 255, 0.3);
     }
     .team-image {
       width: 100%;
@@ -191,7 +322,7 @@
       color: var(--text);
     }
     .team-role {
-      color: var(--primary);
+      color: var(--secondary);
       font-weight: 500;
       margin-bottom: 15px;
     }
@@ -221,10 +352,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      border: 1px solid rgba(0, 255, 255, 0.1);
     }
     .service-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 102, 255, 0.3);
+      border-color: rgba(0, 255, 255, 0.3);
     }
     .service-icon {
       width: 80px;
@@ -235,10 +368,23 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 25px;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-icon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 70%);
     }
     .service-icon i {
       font-size: 36px;
       color: white;
+      position: relative;
+      z-index: 1;
     }
     .service-title {
       font-size: 1.5rem;
@@ -266,7 +412,7 @@
     .filter-btn {
       padding: 10px 25px;
       background-color: var(--card-bg);
-      border: none;
+      border: 1px solid rgba(0, 255, 255, 0.2);
       border-radius: 50px;
       font-weight: 500;
       cursor: pointer;
@@ -278,6 +424,7 @@
     .filter-btn:hover {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: white;
+      border-color: transparent;
     }
     .portfolio-grid {
       display: grid;
@@ -293,10 +440,12 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      border: 1px solid rgba(0, 255, 255, 0.1);
     }
     .portfolio-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 102, 255, 0.3);
+      border-color: rgba(0, 255, 255, 0.3);
     }
     .behance-embed {
       position: relative;
@@ -377,7 +526,7 @@
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 500;
-      color: var(--primary);
+      color: var(--secondary);
     }
     .portfolio-link {
       color: var(--primary);
@@ -453,11 +602,13 @@
       background-color: var(--card-bg);
       color: var(--primary);
       transition: var(--transition);
+      border: 1px solid rgba(0, 255, 255, 0.1);
     }
     .footer-socials a:hover {
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
       transform: translateY(-5px);
+      border-color: transparent;
     }
     .copyright {
       text-align: center;
@@ -493,7 +644,7 @@
     }
     .back-to-top:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
+      box-shadow: 0 15px 30px rgba(0, 102, 255, 0.4);
     }
     
     /* Responsive */
@@ -574,6 +725,29 @@
         grid-template-columns: 1fr;
         gap: 30px;
       }
+      
+      /* About section responsive */
+      .about-container {
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .about-slide {
+        width: 100%;
+        padding: 0 20px;
+      }
+      
+      .about-slide h2 {
+        font-size: 2.2rem;
+      }
+      
+      .about-image {
+        height: 250px;
+      }
+      
+      .about-features {
+        grid-template-columns: 1fr;
+      }
     }
     
     /* Browser compatibility prefixes */
@@ -593,13 +767,80 @@
     <div class="header-bg"></div>
     <div class="header-content container">
       <div class="logo">
-        <i class="fas fa-palette"></i>
+        <img src="assets/Logo.png" alt="">
       </div>
       <h1>NajahCreates</h1>
-      <p class="tagline">Every <strong>Brand</strong> has a <strong>Story</strong> <br> We give it a <strong>Voice</strong>.</p>
-      <a href="#team" class="cta-button">Meet Our Team</a>
+      <p class="tagline">Every <span style="font-family: 'Plus Jakarta Sans', sans-serif;text-decoration: underline;">Brand</span> has a story. <br> We Give it a <span style="font-family: 'Plus Jakarta Sans', sans-serif;text-decoration: underline;">Voice.</span></p>
+      <a href="#about" class="cta-button">Learn More</a>
     </div>
   </header>
+  
+  <!-- About Us Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-container" id="aboutContainer">
+        <div class="about-slide">
+          <h2>About NajahCreates</h2>
+          <p>NajahCreates is a creative agency founded with a vision to transform brands through innovative design solutions. We believe in the power of visual storytelling to connect brands with their audience on a deeper level.</p>
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Our workspace" class="about-image">
+          <p>Our team of talented designers, strategists, and creators work collaboratively to deliver exceptional results that exceed expectations. We approach every project with passion, creativity, and attention to detail.</p>
+        </div>
+        <div class="about-slide">
+          <h2>Our Mission</h2>
+          <p>At NajahCreates, we don't just create designs; we create experiences that resonate with your audience and drive meaningful engagement. Our mission is to help brands communicate their unique story through compelling visual narratives.</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <h3>Creative Excellence</h3>
+              <p>We push creative boundaries to deliver innovative and memorable designs.</p>
+            </div>
+            <div class="about-feature">
+              <h3>Strategic Approach</h3>
+              <p>Every design decision is backed by research and strategic thinking.</p>
+            </div>
+            <div class="about-feature">
+              <h3>Client Partnership</h3>
+              <p>We collaborate closely with clients to bring their vision to life.</p>
+            </div>
+            <div class="about-feature">
+              <h3>Measurable Results</h3>
+              <p>Our designs are not just beautiful; they deliver tangible business results.</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-slide">
+          <h2>Our Process</h2>
+          <p>We follow a streamlined process that ensures efficiency, transparency, and exceptional results at every stage of your project.</p>
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Our process" class="about-image">
+          <p>From initial concept to final delivery, we keep you involved and informed, ensuring the final product not only meets but exceeds your expectations. Let's create something amazing together!</p>
+        </div>
+      </div>
+      <div class="about-nav">
+        <div class="about-dot active" data-slide="0"></div>
+        <div class="about-dot" data-slide="1"></div>
+        <div class="about-dot" data-slide="2"></div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Portfolio Section -->
+  <section class="portfolio-section">
+    <div class="container">
+      <h2 class="section-title">Our Portfolio</h2>
+      <p class="section-subtitle">Explore our latest projects showcasing creativity, innovation, and design excellence</p>
+      
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+        <button class="filter-btn" data-filter="ui-ux">UI/UX</button>
+        <button class="filter-btn" data-filter="illustration">Illustration</button>
+        <button class="filter-btn" data-filter="print">Print Design</button>
+      </div>
+      
+      <div class="portfolio-grid" id="portfolio-container">
+        <!-- Portfolio items will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
   <!-- Team Section -->
   <section id="team" class="team-section">
     <div class="container">
@@ -622,25 +863,6 @@
       </div>
     </div>
   </section>
-  <!-- Portfolio Section -->
-  <section class="portfolio-section">
-    <div class="container">
-      <h2 class="section-title">Our Portfolio</h2>
-      <p class="section-subtitle">Explore our latest projects showcasing creativity, innovation, and design excellence</p>
-      
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="branding">Branding</button>
-        <button class="filter-btn" data-filter="ui-ux">UI/UX</button>
-        <button class="filter-btn" data-filter="illustration">Illustration</button>
-        <button class="filter-btn" data-filter="print">Print Design</button>
-      </div>
-      
-      <div class="portfolio-grid" id="portfolio-container">
-        <!-- Portfolio items will be dynamically inserted here -->
-      </div>
-    </div>
-  </section>
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -649,11 +871,11 @@
           <h3>About Us</h3>
           <p>NajahCreates is a team of passionate designers dedicated to creating visually stunning and effective design solutions for our clients.</p>
           <div class="footer-socials">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+            <a style="text-decoration: none;" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a style="text-decoration: none;" href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a style="text-decoration: none;" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a style="text-decoration: none;" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a style="text-decoration: none;" href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
           </div>
         </div>
         
@@ -663,8 +885,6 @@
             <li><a href="#team">Our Team</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#">Process</a></li>
-            <li><a href="#">Testimonials</a></li>
           </ul>
         </div>
         
@@ -682,9 +902,8 @@
           <h3>Contact Us</h3>
           <p>Have a project in mind? Let's collaborate!</p>
           <ul class="footer-links">
-            <li><i class="fas fa-envelope"></i> hello@creativeminds.com</li>
-            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-            <li><i class="fas fa-map-marker-alt"></i> 123 Design Street, Creative City</li>
+            <li><i class="fas fa-envelope"></i> mohmednajah12@gmail.com</li>
+            <li><i class="fas fa-phone"></i> +91 9995789013</li>
           </ul>
         </div>
       </div>
@@ -754,40 +973,40 @@
     // Portfolio projects data
     const portfolioProjects = [
       {
-        title: "Brand Identity for Tech Startup",
-        description: "Complete brand identity design including logo, color palette, and brand guidelines for an emerging AI company.",
+        title: "Our Logo and Branding",
+        description: "Logo and branding of our brand, created by our team.",
         category: "branding",
+        behanceUrl: "https://www.behance.net/embed/project/231743869?ilo0=1"
+      },
+      {
+        title: "SpikeStorm Poster",
+        description: "A Well crafted poster for a volleyball league with trendy glow effect.",
+        category: "print",
         behanceUrl: "https://www.behance.net/embed/project/228942731?ilo0=1"
       },
       {
-        title: "Mobile Banking App UI",
-        description: "User interface design for a modern mobile banking application focusing on simplicity and security.",
-        category: "ui-ux",
+        title: "Quizzy Hunt",
+        description: "A poster design for Quizzy Hunt, a quiz series with a custom simple typography.",
+        category: "print",
         behanceUrl: "https://www.behance.net/embed/project/228942505?ilo0=1"
       },
       {
-        title: "Festival Poster Series",
+        title: "'Sa' Literature Festival poster with a custom logo.",
         description: "Vibrant poster designs for a summer music festival capturing the energy and spirit of the event.",
-        category: "print",
+        category: "illustration",
         behanceUrl: "https://www.behance.net/embed/project/229616481?ilo0=1"
       },
       {
-        title: "Character Illustrations",
-        description: "Set of whimsical character illustrations created for a children's educational app.",
-        category: "illustration",
+        title: "Pointless Quiz League",
+        description: "A minimalistic poster for quiz league with the name 'Pointless'",
+        category: "branding",
         behanceUrl: "https://www.behance.net/embed/project/228942375?ilo0=1"
       },
       {
-        title: "E-commerce Website Redesign",
-        description: "Complete UI/UX redesign of an e-commerce platform resulting in 35% increase in conversions.",
-        category: "ui-ux",
-        behanceUrl: "https://www.behance.net/embed/project/223964697?ilo0=1"
-      },
-      {
-        title: "Packaging Design for Organic Products",
-        description: "Eco-friendly packaging design for a line of organic food products emphasizing natural ingredients.",
-        category: "branding",
-        behanceUrl: "https://www.behance.net/embed/project/223955593?ilo0=1"
+        title: "NCR-Sahasam a Malayalam Unicode Font",
+        description: "Launch carousel of our next big project for a Malayalam Unicode Font NCR-Sahasam",
+        category: "illustration",
+        behanceUrl: "https://www.behance.net/embed/project/231743801?ilo0=1"
       }
     ];
     // Function to create team member cards
@@ -939,6 +1158,80 @@
         });
       });
     }
+    
+    // About section horizontal scrolling effect
+    function initAboutSection() {
+      const aboutSection = document.getElementById('about');
+      const aboutContainer = document.getElementById('aboutContainer');
+      const aboutDots = document.querySelectorAll('.about-dot');
+      let currentSlide = 0;
+      
+      // Function to update slide position
+      function updateSlidePosition() {
+        const translateX = -currentSlide * (100 / 3); // 3 slides, each 33.333%
+        aboutContainer.style.transform = `translateX(${translateX}%)`;
+        
+        // Update active dot
+        aboutDots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+      
+      // Handle dot clicks
+      aboutDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentSlide = index;
+          updateSlidePosition();
+        });
+      });
+      
+      // Handle horizontal scroll with mouse wheel
+      aboutSection.addEventListener('wheel', (e) => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+          e.preventDefault();
+          
+          if (e.deltaY > 0 && currentSlide < 2) {
+            // Scrolling down, move to next slide
+            currentSlide++;
+            updateSlidePosition();
+          } else if (e.deltaY < 0 && currentSlide > 0) {
+            // Scrolling up, move to previous slide
+            currentSlide--;
+            updateSlidePosition();
+          }
+        }
+      });
+      
+      // Handle touch events for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      aboutSection.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+      
+      aboutSection.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      });
+      
+      function handleSwipe() {
+        if (touchEndX < touchStartX - 50 && currentSlide < 2) {
+          // Swipe left, move to next slide
+          currentSlide++;
+          updateSlidePosition();
+        } else if (touchEndX > touchStartX + 50 && currentSlide > 0) {
+          // Swipe right, move to previous slide
+          currentSlide--;
+          updateSlidePosition();
+        }
+      }
+    }
+    
     // Initialize everything when DOM is loaded
     document.addEventListener('DOMContentLoaded', () => {
       initTeamMembers();
@@ -947,6 +1240,7 @@
       initFilterButtons();
       initSmoothScrolling();
       initBackToTop();
+      initAboutSection();
     });
   </script>
 </body>
